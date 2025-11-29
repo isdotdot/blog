@@ -13,12 +13,17 @@ OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://localhost:11434")
 MODEL = os.environ.get("OLLAMA_MODEL", "llama3.1:8b")
 
 SYSTEM_PROMPT = """
-You write short, friendly blog posts that answer everyday "why does ... ?" questions.
+You write short, friendly blog posts that answer everyday 'why does ... ?' questions.
 Tone: neutral + friendly, clear, practical. Audience: normal people searching the web.
 """
 
 USER_PROMPT = """
-Write ONE complete blog post that answers a common "why does ... ?" question people might Google.
+Write ONE complete blog post that answers a common 'Why does ... ?' question people might Google.
+
+Examples:
+- Why does my phone get hot?
+- Why does my dog eat grass?
+- Why does coffee make me jittery?
 
 Output format:
 - Plain Markdown only.
@@ -93,7 +98,7 @@ def make_description(body: str) -> str:
         if len(desc) > 180:
             desc = desc[:177] + "..."
         return desc
-    return "A simple explanation for an everyday question."
+    return "A simple explanation for an everyday 'why does...?' question."
 
 def main():
     raw = call_ollama()
@@ -131,4 +136,3 @@ draft = false
 
 if __name__ == "__main__":
     main()
-
