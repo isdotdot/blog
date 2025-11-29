@@ -1,4 +1,4 @@
-baseURL = "https://isdotdot.github.io/blog/"
+baseURL = "https://why.isdotdot.com/"
 languageCode = "en-us"
 title = "Why Things Happen"
 paginate = 10
