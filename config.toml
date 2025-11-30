@@ -1,7 +1,24 @@
 baseURL = "https://why.isdotdot.com/"
-languageCode = "en-us"
 title = "Why Things Happen"
+languageCode = "en-us"
 paginate = 10
+enableRobotsTXT = true
 
 [params]
-  siteDescription = "Friendly, simple explanations for everyday 'why does...?' questions."
+  description = "Friendly, simple explanations for everyday 'why does...?' questions."
+  twitterHandle = "@your_twitter_here" # optional
+  defaultSocialImage = "https://isdotdot.com/images/social-default.png" # optional
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"]
+  page = ["HTML"]
+
+[related]
+  includeNewer = true
+  threshold = 80
+  toLower = true
+
+  [[related.indices]]
+    name = "tags"
+    weight = 100
